@@ -23,7 +23,7 @@ class Smurf extends React.Component {
         return this.state.editing
             ? (
                 <form onSubmit={this.initializeUpdate} className="update-form">
-                    <span className="fas fa-undo return" onClick={() => this.setState({ editing: false })}></span>
+                    <span className="return" onClick={() => this.setState({ editing: false })}></span>
                     <input
                         placeholder="Name"
                         onChange={this.handleUpdate}
@@ -48,11 +48,11 @@ class Smurf extends React.Component {
             )
             : (
                 <div className="Smurf">
-                    <span className="far fa-edit edit btn" onClick={() => this.setState({ editing: true })}></span>
+                    <span className="edit btn" onClick={() => this.setState({ editing: true })}></span>
                     <h3>{this.props.name}</h3>
                     <strong>{this.props.height} tall</strong>
                     <p>{this.props.age} smurf years old</p>
-                    <span className="far fa-trash-alt delete btn" onClick={() => this.props.deleteSmurf(this.props.id)}></span>
+                    <span className="delete btn" onClick={() => this.props.deleteSmurf(this.props.id)}></span>
                 </div>
             );
     }
